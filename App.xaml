@@ -4,12 +4,5 @@
              xmlns:local="clr-namespace:Shutdown"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Foreground" Value="#1c1c1c"/>
-        </Style>
     </Application.Resources>
 </Application>
