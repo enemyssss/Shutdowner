@@ -217,6 +217,5 @@
             Foreground="White"
             FontSize="20"  
         />
-
     </Grid>
 </Window>
