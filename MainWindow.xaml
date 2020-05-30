@@ -149,9 +149,6 @@
             <Shutdowner:UserControl1.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
                 </TransformGroup>
             </Shutdowner:UserControl1.RenderTransform>
         </Shutdowner:UserControl1>
@@ -170,9 +167,6 @@
             <Shutdowner:UserControl1.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
                 </TransformGroup>
             </Shutdowner:UserControl1.RenderTransform>
         </Shutdowner:UserControl1>
