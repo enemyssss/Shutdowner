@@ -22,7 +22,6 @@ C:\Users\marcu\Desktop\Shutdowner\obj\Debug\MainWindow.g.cs
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\App.g.cs
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\Shutdowner_MarkupCompile.cache
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\Shutdowner_MarkupCompile.lref
-C:\Users\marcu\Desktop\Shutdowner\obj\Debug\App.baml
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\MainWindow.baml
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\Shutdowner.g.resources
 C:\Users\marcu\Desktop\Shutdowner\obj\Debug\Shutdown.csproj.GenerateResource.cache
