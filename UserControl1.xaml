@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Shutdowner.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Shutdowner"
+             mc:Ignorable="d" d:DesignWidth="523" Height="370">
+    <UserControl.Resources>
+        <Thickness x:Key="Thickness1">-155,0,0,0</Thickness>
+        <Thickness x:Key="Thickness2">0,0,-155,0</Thickness>
+    </UserControl.Resources>
+    <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Center" Height="236" Margin="0" VerticalAlignment="Center" Width="410">
+            <Rectangle x:Name="Back" Fill="Aqua" HorizontalAlignment="Left" Height="243" Margin="10,0,0,-7" VerticalAlignment="Top" Width="390" RadiusY="120" RadiusX="120" MouseLeftButtonDown="Back_MouseLeftButtonDown"/>
+            <Ellipse x:Name="Dot" Fill="Black" HorizontalAlignment="Center" Height="212" VerticalAlignment="Center" Width="212" MouseLeftButtonDown="Dot_MouseLeftButtonDown" Margin="106,10,92,0"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

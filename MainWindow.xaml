@@ -1,0 +1,228 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shutdown"
+        xmlns:Shutdowner="clr-namespace:Shutdowner" x:Class="Shutdown.MainWindow"
+        mc:Ignorable="d"
+        Height="300" Width="250"
+        Top="740" Left="1670"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle
+            Grid.Row="0"
+            Grid.RowSpan="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Fill="Black" 
+            Opacity="0.9"
+        />
+
+        <Image
+            Source="time-145738_640.ico" 
+            Height="30"
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            />
+
+        <TextBlock
+            Text="Shutdowner"
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="Aqua"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            FontSize="20"
+            Padding="40,0,0,0"
+        />
+
+        <TextBlock
+            Text="x"  
+            Grid.Row="0"
+            Grid.Column="4"  
+            FontSize="25"
+            Cursor="Arrow"
+            Foreground="White"
+            Background="Transparent"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            MouseUp="TextBlock_MouseUp"  
+        />
+
+        <TextBlock
+            x:Name="TextShutdown"
+            Text="Minuten oder Uhrzeit"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Background="Transparent"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            FontSize="15"
+            TextWrapping="Wrap"
+        />
+        <TextBox
+            x:Name="InputBox"  
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            Background="Transparent"
+            Foreground="white"
+            CaretBrush="DarkSlateGray"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            FontSize="20"  
+            BorderThickness="0,0,0,3"
+            BorderBrush="Aqua"
+            TextWrapping="Wrap"
+            MouseEnter="InputBox_MouseEnter"
+            Margin="0,7"
+        />
+
+        <TextBlock
+            x:Name="TextSofort"
+            Text="sofortiger Shutdown" 
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            FontSize="15"   
+        />
+
+        <TextBlock
+            x:Name="TextVoll"
+            Text="Hybrid-Start aus (vollständiger Shutdown)" 
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            FontSize="15"   
+            TextWrapping="Wrap"
+        />
+
+        <Shutdowner:UserControl1 
+            x:Name="ToggleSwitch1"
+            Grid.Column="4" 
+            HorizontalAlignment="Left" 
+            Margin="1,0,0,0" 
+            VerticalAlignment="Top" 
+            Height="58" 
+            Grid.Row="2" 
+            Width="56" 
+            RenderTransformOrigin="0.5,0.5"
+            MouseLeftButtonDown="ToggleSwitch1_MouseLeftButtonDown"  
+            >
+            <Shutdowner:UserControl1.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Shutdowner:UserControl1.RenderTransform>
+        </Shutdowner:UserControl1>
+
+        <Shutdowner:UserControl1 
+            x:Name="ToggleSwitch2"
+            Grid.Column="4"
+            HorizontalAlignment="Left" 
+            Margin="1,0,0,0" 
+            Grid.Row="3" 
+            VerticalAlignment="Top" 
+            Height="58" 
+            RenderTransformOrigin="0.5,0.5"
+            MouseLeftButtonDown="ToggleSwitch2_MouseLeftButtonDown" 
+            >
+            <Shutdowner:UserControl1.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Shutdowner:UserControl1.RenderTransform>
+        </Shutdowner:UserControl1>
+
+        <Button
+            x:Name="AcceptOperation"
+            Content="Starten"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            Height="40"
+            FontSize="15"
+            Background="Aqua"
+            FontWeight="Bold"
+            BorderThickness="1"
+            BorderBrush="Aqua"  
+            Click="AcceptOperation_Click"   
+        />
+
+        <Button
+            x:Name="CancelOperation"    
+            Content="Abbrechen"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            Height="40"
+            FontSize="15"  
+            BorderThickness="2"
+            BorderBrush="OrangeRed"
+            Click="CancelOperation_Click"   
+            Visibility="Hidden"
+        />
+
+        <TextBlock
+            x:Name="RunningOp"
+            Grid.Row="1"
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Hidden"
+            Background="Transparent"
+            Foreground="White"
+            FontSize="20"  
+        />
+
+    </Grid>
+</Window>
