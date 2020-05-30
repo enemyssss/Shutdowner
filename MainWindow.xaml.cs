@@ -99,7 +99,7 @@ namespace Shutdown {
         }
 
         private void ForceOperation(ref string Command, long time) {
-           Command = ToggleSwitch1.Clicked == true ? ToggleSwitch2.Clicked == true ? $" /s /t 0 /f" : $" /hybrid /s /t 0 /f" : ToggleSwitch2.Clicked == true ? $" /s /t {time} /f" : $" /hybrid /s /t {time} /f";
+           Command = ToggleSwitch1.Clicked == true ? ToggleSwitch2.Clicked == true ? $" /s /t 0 /p /f" : $" /hybrid /s /t 0 /p /f" : ToggleSwitch2.Clicked == true ? $" /s /t {time} /p /f" : $" /hybrid /s /t {time} /p /f";
 
             if(System.Diagnostics.Process.Start("shutdown", Command) != null) {
                 ToggleSwitch1.Visibility = Visibility.Hidden;
