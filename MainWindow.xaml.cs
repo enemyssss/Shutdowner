@@ -33,7 +33,7 @@ namespace Shutdown {
             string Command = null;
             var eingabe = InputBox.Text;
 
-            if(!long.TryParse(eingabe, out time) && ToggleSwitch1.Toggled1 == false) {
+            if(!long.TryParse(eingabe, out time) && !ToggleSwitch1.Clicked) {
                 if(eingabe.Contains(':')) {
                     var currentTime = DateTime.Now;
                     if(DateTime.TryParse(eingabe,out DateTime targetTime)) {
@@ -50,6 +50,10 @@ namespace Shutdown {
                         time = Convert.ToInt64(Math.Ceiling(targetTime.Subtract(currentTime).TotalSeconds));
                         ForceOperation(ref Command, time);
                     }
+                    else {
+                        InputBox.FontSize = 15;
+                        InputBox.Text = "inkorrekte Uhrzeit";
+                    }
                 }
                 else {
                     InputBox.FontSize = 15;
@@ -63,7 +67,7 @@ namespace Shutdown {
         }
 
         private void ToggleSwitch1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            if(ToggleSwitch1.Toggled1) {
+            if(ToggleSwitch1.Clicked) {
                 InputBox.Text = "";
                 InputBox.Visibility = Visibility.Hidden;
                 TextShutdown.Visibility = Visibility.Hidden;
@@ -108,7 +112,7 @@ namespace Shutdown {
         }
 
         private void ForceOperation(ref string Command, long time) {
-           Command = ToggleSwitch1.Toggled1 == true ? ToggleSwitch2.Toggled1 == true ? $" /s /t 0 /f" : $" /hybrid /s /t 0 /f" : ToggleSwitch2.Toggled1 == true ? $" /s /t {time} /f" : $" /hybrid /s /t {time} /f";
+           Command = ToggleSwitch1.Clicked == true ? ToggleSwitch2.Clicked == true ? $" /s /t 0 /f" : $" /hybrid /s /t 0 /f" : ToggleSwitch2.Clicked == true ? $" /s /t {time} /f" : $" /hybrid /s /t {time} /f";
 
             if(System.Diagnostics.Process.Start("shutdown", Command) != null) {
                 ToggleSwitch1.Visibility = Visibility.Hidden;

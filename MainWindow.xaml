@@ -78,7 +78,7 @@
 
         <TextBlock
             x:Name="TextShutdown"
-            Text="Minuten oder Uhrzeit"
+            Text="Minuten oder Uhrzeit stellen"
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
@@ -179,7 +179,7 @@
 
         <Button
             x:Name="AcceptOperation"
-            Content="Starten"
+            Content="Aktivieren"
             Grid.Row="4"
             Grid.Column="1"
             Grid.ColumnSpan="4"

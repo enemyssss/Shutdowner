@@ -23,40 +23,40 @@ namespace Shutdowner {
         Thickness RightSide = new Thickness(0, 0, -155, 0);
         SolidColorBrush Disabled = new SolidColorBrush(Color.FromRgb(0, 255, 255));
         SolidColorBrush Enabled = new SolidColorBrush(Color.FromRgb(253,46,0));
-        private bool Toggled = false;
+        private bool clicked = false;
 
         public UserControl1() {
             InitializeComponent();
             Back.Fill = Disabled;
             Dot.Margin = LeftSide;
-            Toggled = false;
+            clicked = false;
         }
 
-        public bool Toggled1 { get => Toggled; set => Toggled = value; }
+        public bool Clicked { get => clicked; set => clicked = value; }
 
         private void Dot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            if(!Toggled) {
+            if(!clicked) {
                 Back.Fill = Enabled;
                 Dot.Margin = RightSide;
-                Toggled = true;
+                clicked = true;
             }
             else {
                 Back.Fill = Disabled;
                 Dot.Margin = LeftSide;
-                Toggled = false;
+                clicked = false;
             }
         }
 
         private void Back_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            if(!Toggled) {
+            if(!clicked) {
                 Back.Fill = Enabled;
                 Dot.Margin = RightSide;
-                Toggled = true;
+                clicked = true;
             }
             else {
                 Back.Fill = Disabled;
                 Dot.Margin = LeftSide;
-                Toggled = false;
+                clicked = false;
             }
         }
     }
